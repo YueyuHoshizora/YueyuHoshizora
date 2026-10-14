@@ -28,7 +28,7 @@
   <rect x="50" y="78" width="60" height="60" rx="12" fill="none" stroke="#00e5ff" stroke-opacity=".7"/>
   <text x="132" y="102" font-size="17" font-weight="700" fill="#eef4ff">YSGS<tspan font-size="12" font-weight="400" fill="#00e5ff" dx="12">@YuStellarGamesStudio</tspan></text>
   <text x="132" y="126" font-size="12" fill="#5b6b8c">Yu Stellar Games Studio</text>
-  <text x="1148" y="104" font-size="24" font-weight="700" fill="#eef4ff" text-anchor="end">12</text>
+  <text x="1148" y="104" font-size="24" font-weight="700" fill="#eef4ff" text-anchor="end">11</text>
   <text x="1148" y="126" font-size="11" fill="#5b6b8c" text-anchor="end" letter-spacing="1">PUBLIC REPOS · SINCE 2026</text>
 </g>
 <g class="fade" style="animation-delay:0.1s">
