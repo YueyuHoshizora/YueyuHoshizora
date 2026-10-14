@@ -2,11 +2,9 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark) and (max-width: 1100px)" srcset="https://YueyuHoshizora.github.io/github-profile-summary-cards/YueyuHoshizora/en/card-narrow-dark.svg">
-    <source media="(prefers-color-scheme: light) and (max-width: 1100px)" srcset="https://YueyuHoshizora.github.io/github-profile-summary-cards/YueyuHoshizora/en/card-narrow-light.svg">
-    <source media="(prefers-color-scheme: dark)" srcset="https://YueyuHoshizora.github.io/github-profile-summary-cards/YueyuHoshizora/en/card-medium-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://YueyuHoshizora.github.io/github-profile-summary-cards/YueyuHoshizora/en/card-medium-light.svg">
-    <img src="https://YueyuHoshizora.github.io/github-profile-summary-cards/YueyuHoshizora/en/card-medium-light.svg" width="100%" alt="My GitHub activity over the past 12 months: totals, contributions by week, commits by hour in UTC, and top languages.">
+    [![](https://raw.githubusercontent.com/YueyuHoshizora/github-profile-summary-cards/master/profile-summary-card-output/material_palenight/0-profile-details.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+    [![](https://raw.githubusercontent.com/YueyuHoshizora/github-profile-summary-cards/master/profile-summary-card-output/material_palenight/1-repos-per-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards) [![](https://raw.githubusercontent.com/YueyuHoshizora/github-profile-summary-cards/master/profile-summary-card-output/material_palenight/2-most-commit-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+    [![](https://raw.githubusercontent.com/YueyuHoshizora/github-profile-summary-cards/master/profile-summary-card-output/material_palenight/3-stats.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards) [![](https://raw.githubusercontent.com/YueyuHoshizora/github-profile-summary-cards/master/profile-summary-card-output/material_palenight/4-productive-time.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
   </picture>
 </p>
 
