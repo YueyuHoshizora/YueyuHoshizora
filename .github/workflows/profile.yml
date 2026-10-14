@@ -1,0 +1,50 @@
+name: Update profile
+
+on:
+  schedule:
+    # Every 5 minutes (GitHub's minimum; scheduled runs may be delayed under load).
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/profile.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Generate SVG panels and README block
+        env:
+          # Optional: add a PAT as the PROFILE_TOKEN secret to include private contribution counts.
+          GH_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_USER: ${{ github.repository_owner }}
+          PROFILE_TZ: Asia/Taipei
+        run: node scripts/generate.mjs
+
+      - name: Commit if anything changed
+        run: |
+          git add assets README.md
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: refresh profile telemetry [skip ci]"
+          git push

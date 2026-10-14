@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="290" viewBox="0 0 1200 290" font-family="'JetBrains Mono','Fira Code','SFMono-Regular',Consolas,'Noto Sans Mono CJK TC','PingFang TC','Microsoft JhengHei',monospace">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#05070d"/><stop offset="1" stop-color="#0b1022"/></linearGradient>
+  <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00e5ff"/><stop offset="1" stop-color="#ff2bd6"/></linearGradient>
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#00e5ff" stroke-opacity=".05"/></pattern>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  
+</defs>
+<style>
+  .blink{animation:blink 1.2s steps(2,start) infinite}
+  @keyframes blink{to{visibility:hidden}}
+  .fade{opacity:0;animation:fade .6s ease-out forwards}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .scan{animation:scan 6s linear infinite}
+  @keyframes scan{from{transform:translateY(-60px)}to{transform:translateY(350px)}}
+</style>
+<rect width="1200" height="290" rx="14" fill="url(#bg)"/>
+<rect width="1200" height="290" rx="14" fill="url(#grid)"/>
+<rect x=".5" y=".5" width="1199" height="289" rx="14" fill="none" stroke="#1b2440"/>
+<path d="M8 24V8H24" fill="none" stroke="#00e5ff" stroke-width="2" opacity=".7"/><path d="M1176 8H1192V24" fill="none" stroke="#00e5ff" stroke-width="2" opacity=".7"/><path d="M8 266V282H24" fill="none" stroke="#00e5ff" stroke-width="2" opacity=".7"/><path d="M1176 282H1192V266" fill="none" stroke="#00e5ff" stroke-width="2" opacity=".7"/>
+<text x="28" y="38" font-size="13" fill="#5b6b8c" letter-spacing="2"><tspan fill="#00e5ff">▍</tspan>TELEMETRY // PUBLIC CONTRIBUTION DATA</text>
+<circle class="blink" cx="1166" cy="33" r="4" fill="#39ff88" filter="url(#glow)"/>
+<text x="1154" y="38" font-size="11" fill="#39ff88" text-anchor="end" letter-spacing="2">LIVE</text>
+<g class="fade" style="animation-delay:0s">
+  <rect x="28" y="62" width="270" height="100" rx="10" fill="#0d1326" stroke="#1b2440"/>
+  <rect x="28" y="80" width="3" height="64" fill="#00e5ff" filter="url(#glow)"/>
+  <text x="48" y="90" font-size="11" fill="#5b6b8c" letter-spacing="2">PUBLIC REPOS</text>
+  <text x="48" y="128" font-size="32" font-weight="700" fill="#eef4ff">26</text>
+  <text x="48" y="148" font-size="11" fill="#00e5ff" opacity=".85">15 source · 11 forks</text>
+</g>
+<g class="fade" style="animation-delay:0.08s">
+  <rect x="314" y="62" width="270" height="100" rx="10" fill="#0d1326" stroke="#1b2440"/>
+  <rect x="314" y="80" width="3" height="64" fill="#ffb020" filter="url(#glow)"/>
+  <text x="334" y="90" font-size="11" fill="#5b6b8c" letter-spacing="2">STARS EARNED</text>
+  <text x="334" y="128" font-size="32" font-weight="700" fill="#eef4ff">7</text>
+  <text x="334" y="148" font-size="11" fill="#ffb020" opacity=".85">7 forks of my work</text>
+</g>
+<g class="fade" style="animation-delay:0.16s">
+  <rect x="600" y="62" width="270" height="100" rx="10" fill="#0d1326" stroke="#1b2440"/>
+  <rect x="600" y="80" width="3" height="64" fill="#39ff88" filter="url(#glow)"/>
+  <text x="620" y="90" font-size="11" fill="#5b6b8c" letter-spacing="2">CONTRIBUTIONS</text>
+  <text x="620" y="128" font-size="32" font-weight="700" fill="#eef4ff">4,219</text>
+  <text x="620" y="148" font-size="11" fill="#39ff88" opacity=".85">last 365 days</text>
+</g>
+<g class="fade" style="animation-delay:0.24s">
+  <rect x="886" y="62" width="270" height="100" rx="10" fill="#0d1326" stroke="#1b2440"/>
+  <rect x="886" y="80" width="3" height="64" fill="#00e5ff" filter="url(#glow)"/>
+  <text x="906" y="90" font-size="11" fill="#5b6b8c" letter-spacing="2">COMMITS</text>
+  <text x="906" y="128" font-size="32" font-weight="700" fill="#eef4ff">3,735</text>
+  <text x="906" y="148" font-size="11" fill="#00e5ff" opacity=".85">last 365 days</text>
+</g>
+<g class="fade" style="animation-delay:0.32s">
+  <rect x="28" y="178" width="270" height="100" rx="10" fill="#0d1326" stroke="#1b2440"/>
+  <rect x="28" y="196" width="3" height="64" fill="#8b5cf6" filter="url(#glow)"/>
+  <text x="48" y="206" font-size="11" fill="#5b6b8c" letter-spacing="2">PULL REQUESTS</text>
+  <text x="48" y="244" font-size="32" font-weight="700" fill="#eef4ff">143</text>
+  <text x="48" y="264" font-size="11" fill="#8b5cf6" opacity=".85">162 all-time</text>
+</g>
+<g class="fade" style="animation-delay:0.4s">
+  <rect x="314" y="178" width="270" height="100" rx="10" fill="#0d1326" stroke="#1b2440"/>
+  <rect x="314" y="196" width="3" height="64" fill="#ff2bd6" filter="url(#glow)"/>
+  <text x="334" y="206" font-size="11" fill="#5b6b8c" letter-spacing="2">ISSUES</text>
+  <text x="334" y="244" font-size="32" font-weight="700" fill="#eef4ff">130</text>
+  <text x="334" y="264" font-size="11" fill="#ff2bd6" opacity=".85">221 all-time</text>
+</g>
+<g class="fade" style="animation-delay:0.48s">
+  <rect x="600" y="178" width="270" height="100" rx="10" fill="#0d1326" stroke="#1b2440"/>
+  <rect x="600" y="196" width="3" height="64" fill="#39ff88" filter="url(#glow)"/>
+  <text x="620" y="206" font-size="11" fill="#5b6b8c" letter-spacing="2">CURRENT STREAK</text>
+  <text x="620" y="244" font-size="32" font-weight="700" fill="#eef4ff">38</text>
+  <text x="620" y="264" font-size="11" fill="#39ff88" opacity=".85">longest 38 days</text>
+</g>
+<g class="fade" style="animation-delay:0.56s">
+  <rect x="886" y="178" width="270" height="100" rx="10" fill="#0d1326" stroke="#1b2440"/>
+  <rect x="886" y="196" width="3" height="64" fill="#ffb020" filter="url(#glow)"/>
+  <text x="906" y="206" font-size="11" fill="#5b6b8c" letter-spacing="2">FOLLOWERS</text>
+  <text x="906" y="244" font-size="32" font-weight="700" fill="#eef4ff">15</text>
+  <text x="906" y="264" font-size="11" fill="#ffb020" opacity=".85">following 14</text>
+</g>
+<rect class="scan" x="0" y="0" width="1200" height="40" fill="#00e5ff" opacity=".035"/>
+</svg>
