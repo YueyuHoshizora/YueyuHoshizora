@@ -127,32 +127,32 @@
 
   <text x="830" y="104" font-size="12" fill="#5b6b8c">SUN</text>
   <rect x="876" y="92" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="92" width="61.31821403260099" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="104" font-size="11" fill="#c9d6f2">309</text>
+  <rect x="876" y="92" width="61.95744680851063" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="104" font-size="11" fill="#c9d6f2">312</text>
   <text x="830" y="134" font-size="12" fill="#5b6b8c">MON</text>
   <rect x="876" y="122" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="122" width="132.36002834868887" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="134" font-size="11" fill="#c9d6f2">667</text>
+  <rect x="876" y="122" width="132.05673758865248" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="134" font-size="11" fill="#c9d6f2">665</text>
   <text x="830" y="164" font-size="12" fill="#5b6b8c">TUE</text>
   <rect x="876" y="152" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="152" width="154.38695960311836" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="164" font-size="11" fill="#c9d6f2">778</text>
+  <rect x="876" y="152" width="154.8936170212766" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="164" font-size="11" fill="#c9d6f2">780</text>
   <text x="830" y="194" font-size="12" fill="#5b6b8c">WED</text>
   <rect x="876" y="182" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="182" width="81.75761871013466" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="194" font-size="11" fill="#c9d6f2">412</text>
+  <rect x="876" y="182" width="81.61702127659574" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="194" font-size="11" fill="#c9d6f2">411</text>
   <text x="830" y="224" font-size="12" fill="#5b6b8c">THU</text>
   <rect x="876" y="212" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="212" width="57.34939759036144" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="224" font-size="11" fill="#c9d6f2">289</text>
+  <rect x="876" y="212" width="57.5886524822695" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="224" font-size="11" fill="#c9d6f2">290</text>
   <text x="830" y="254" font-size="12" fill="#5b6b8c">FRI</text>
   <rect x="876" y="242" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="242" width="70.049610205528" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="254" font-size="11" fill="#c9d6f2">353</text>
+  <rect x="876" y="242" width="69.70212765957447" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="254" font-size="11" fill="#c9d6f2">351</text>
   <text x="830" y="284" font-size="12" fill="#eef4ff">SAT</text>
   <rect x="876" y="272" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
   <rect x="876" y="272" width="280" height="14" rx="3" fill="#ff2bd6" opacity="1"/>
-  <text x="1166" y="284" font-size="11" fill="#c9d6f2">1411</text>
+  <text x="1166" y="284" font-size="11" fill="#c9d6f2">1410</text>
 <text x="830" y="328" font-size="12" fill="#5b6b8c">CHRONOTYPE ▸ <tspan fill="#39ff88" font-weight="700">DAY RUNNER</tspan></text>
 <rect class="scan" x="0" y="0" width="1200" height="40" fill="#00e5ff" opacity=".035"/>
 </svg>

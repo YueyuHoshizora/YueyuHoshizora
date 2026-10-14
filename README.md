@@ -22,20 +22,13 @@
 
 <img src="./assets/languages.svg" width="100%" alt="Languages by bytes across public repositories" />
 
-### ▍RECENT.DEPLOYMENTS
+### ▍NETWORK.NODES
 
-<!-- PROFILE:START -->
-| Repository | Description | Lang | Stars | Last push |
-|:--|:--|:--:|:--:|:--:|
-| [**TrackRadar**](https://github.com/YueyuHoshizora/TrackRadar) | YouTube 資料抓取系統 | `TypeScript` | ★ 1 | 2026-10-14 |
-| [**AMusic**](https://github.com/YueyuHoshizora/AMusic) | 聽見音樂 AMusic | `HTML` | ★ 0 | 2026-10-14 |
-| [**YuStellar-Site**](https://github.com/YueyuHoshizora/YuStellar-Site) | — | `JavaScript` | ★ 0 | 2026-10-13 |
-| [**YuMeewADE**](https://github.com/YueyuHoshizora/YuMeewADE) | — | `TypeScript` | ★ 0 | 2026-10-13 |
-| [**YuMeewMusic**](https://github.com/YueyuHoshizora/YuMeewMusic) | YuMeew。音樂視覺工作室 | `JavaScript` | ★ 3 | 2026-10-01 |
-| [**suno-lyrics-bridge**](https://github.com/YueyuHoshizora/suno-lyrics-bridge) | Chrome extension: fetch Suno aligned lyrics timing, export SRT/LRC, import into YuMeew subtitle editor. | `JavaScript` | ★ 0 | 2026-09-23 |
-<!-- PROFILE:END -->
+<img src="./assets/organizations.svg" width="100%" alt="Organizations I belong to" />
 
 ---
+
+<img src="./assets/cat.svg" width="100%" alt="A chubby grey cat walking back and forth" />
 
 <p align="center">
   <sub>

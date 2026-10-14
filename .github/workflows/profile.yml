@@ -35,11 +35,12 @@ jobs:
           GH_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
           GH_USER: ${{ github.repository_owner }}
           PROFILE_TZ: Asia/Taipei
+          PROFILE_ORGS: YuStellarGamesStudio,JS-PACKAGE,FreeTWAI
         run: node scripts/generate.mjs
 
       - name: Commit if anything changed
         run: |
-          git add assets README.md
+          git add assets
           if git diff --cached --quiet; then
             echo "No changes."
             exit 0

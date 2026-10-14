@@ -1,18 +1,19 @@
-// Generates the dark, HUD-style SVG panels in assets/ and the dynamic block in README.md
-// from public GitHub data. Runs in GitHub Actions (see .github/workflows/profile.yml).
+// Generates the dark, HUD-style SVG panels in assets/ from public GitHub data. Runs in GitHub Actions (see .github/workflows/profile.yml).
 //
 // Env:
 //   GH_TOKEN      token for the GraphQL API (GITHUB_TOKEN is enough for public data)
 //   GH_USER       login to render (defaults to the repository owner)
 //   PROFILE_TZ    IANA timezone for "active hours" (default Asia/Taipei)
+//   PROFILE_ORGS  comma-separated org logins to always show (private memberships are
+//                 invisible to GITHUB_TOKEN, so list them here)
 
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { writeFile, mkdir } from 'node:fs/promises';
 
 const TOKEN = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
 const LOGIN = process.env.GH_USER || process.env.GITHUB_REPOSITORY_OWNER || 'YueyuHoshizora';
 const TZ = process.env.PROFILE_TZ || 'Asia/Taipei';
 const OUT = new URL('../assets/', import.meta.url);
-const README = new URL('../README.md', import.meta.url);
+const EXTRA_ORGS = (process.env.PROFILE_ORGS || '').split(',').map((o) => o.trim()).filter(Boolean);
 
 if (!TOKEN) {
   console.error('GH_TOKEN is required');
@@ -41,6 +42,7 @@ query($login: String!) {
     repositories(ownerAffiliations: OWNER, privacy: PUBLIC) { totalCount }
     pullRequests { totalCount }
     issues { totalCount }
+    organizations(first: 50) { nodes { login } }
     contributionsCollection {
       totalCommitContributions
       totalPullRequestContributions
@@ -109,6 +111,28 @@ async function fillHistory(repo, since, author) {
   }
 }
 
+const ORG_QUERY = `
+query($login: String!) {
+  organization(login: $login) {
+    login name description url createdAt avatarUrl(size: 120)
+    repositories(privacy: PUBLIC) { totalCount }
+  }
+}`;
+
+async function fetchOrgs(user) {
+  const logins = [...new Set([...user.organizations.nodes.map((o) => o.login), ...EXTRA_ORGS])];
+  const orgs = [];
+  for (const login of logins) {
+    try {
+      const { organization } = await gql(ORG_QUERY, { login });
+      if (organization) orgs.push({ ...organization, avatar: await fetchAvatar(organization.avatarUrl) });
+    } catch (e) {
+      console.warn(`skip org ${login}: ${e.message}`);
+    }
+  }
+  return orgs;
+}
+
 async function fetchAll() {
   const { user } = await gql(PROFILE_QUERY, { login: LOGIN });
   const since = new Date(Date.now() - 365 * 864e5).toISOString();
@@ -121,7 +145,8 @@ async function fetchAll() {
     after = page.pageInfo.hasNextPage ? page.pageInfo.endCursor : null;
   } while (after);
   for (const r of repos) await fillHistory(r, since, user.id);
-  return { user, repos };
+  const orgs = await fetchOrgs(user);
+  return { user, repos, orgs };
 }
 
 async function fetchAvatar(url) {
@@ -138,7 +163,7 @@ async function fetchAvatar(url) {
 
 // ------------------------------------------------------------- analysis ---
 
-function analyze({ user, repos }) {
+function analyze({ user, repos, orgs }) {
   const own = repos.filter((r) => !r.isFork);
   const cc = user.contributionsCollection;
   const days = cc.contributionCalendar.weeks.flatMap((w) => w.contributionDays);
@@ -202,7 +227,7 @@ function analyze({ user, repos }) {
     followers: user.followers.totalCount,
     following: user.following.totalCount,
     current, longest, best, weekdays, hours, commits, languages,
-    recent: own.filter((r) => r.name.toLowerCase() !== LOGIN.toLowerCase() && !r.isArchived).slice(0, 6),
+    orgs,
   };
 }
 
@@ -461,27 +486,101 @@ ${side}`;
   return frame(w, h, 'CONTRIB.MATRIX // LAST 365 DAYS', body);
 }
 
-// --------------------------------------------------------------- readme ---
-
-function readmeBlock(s) {
-  const rows = s.recent.map((r) => {
-    const lang = r.primaryLanguage?.name ?? '—';
-    const desc = (r.description || '').replace(/\|/g, '\\|').replace(/\s+/g, ' ').trim() || '—';
-    return `| [**${r.name}**](${r.url}) | ${desc} | \`${lang}\` | ★ ${r.stargazerCount} | ${r.pushedAt.slice(0, 10)} |`;
-  });
-  return [
-    '<!-- PROFILE:START -->',
-    '| Repository | Description | Lang | Stars | Last push |',
-    '|:--|:--|:--:|:--:|:--:|',
-    ...rows,
-    '<!-- PROFILE:END -->',
-  ].join('\n');
+// Rough monospace width budget: CJK glyphs count double.
+function clip(str = '', max) {
+  let out = '', w = 0;
+  for (const ch of str) {
+    w += /[⺀-￿]/.test(ch) ? 2 : 1;
+    if (w > max) return out + '…';
+    out += ch;
+  }
+  return out;
 }
 
-async function updateReadme(s) {
-  const md = await readFile(README, 'utf8');
-  const next = md.replace(/<!-- PROFILE:START -->[\s\S]*?<!-- PROFILE:END -->/, readmeBlock(s));
-  if (next !== md) await writeFile(README, next);
+function orgsSvg(s) {
+  const w = 1200, cols = 3, cw = 365, ch = 116, gx = 16, gy = 16, x0 = 28, y0 = 62;
+  const rows = Math.max(1, Math.ceil(s.orgs.length / cols));
+  const h = y0 + rows * (ch + gy) + 12;
+  const accents = [C.cyan, C.mag, C.violet, C.green, C.amber];
+  const defs = s.orgs.map((o, i) => {
+    const x = x0 + (i % cols) * (cw + gx), y = y0 + Math.floor(i / cols) * (ch + gy);
+    return `<clipPath id="org${i}"><rect x="${x + 20}" y="${y + 24}" width="68" height="68" rx="14"/></clipPath>`;
+  }).join('');
+  const cards = s.orgs.map((o, i) => {
+    const x = x0 + (i % cols) * (cw + gx), y = y0 + Math.floor(i / cols) * (ch + gy);
+    const a = accents[i % accents.length];
+    const tx = x + 106;
+    return `<g class="fade" style="animation-delay:${i * 0.1}s">
+  <rect x="${x}" y="${y}" width="${cw}" height="${ch}" rx="12" fill="${C.panel}" stroke="${C.line}"/>
+  <path d="M${x + cw - 46} ${y}H${x + cw - 12}a12 12 0 0 1 12 12V${y + 34}" fill="none" stroke="${a}" stroke-width="2" opacity=".8"/>
+  ${o.avatar
+    ? `<image href="${o.avatar}" x="${x + 20}" y="${y + 24}" width="68" height="68" clip-path="url(#org${i})" preserveAspectRatio="xMidYMid slice"/>`
+    : `<rect x="${x + 20}" y="${y + 24}" width="68" height="68" rx="14" fill="${C.bg1}"/>`}
+  <rect x="${x + 20}" y="${y + 24}" width="68" height="68" rx="14" fill="none" stroke="${a}" stroke-opacity=".7" filter="url(#glow)"/>
+  <text x="${tx}" y="${y + 40}" font-size="16" font-weight="700" fill="${C.white}">${esc(clip(o.name || o.login, 24))}</text>
+  <text x="${tx}" y="${y + 60}" font-size="12" fill="${a}">@${esc(o.login)}</text>
+  <text x="${tx}" y="${y + 80}" font-size="12" fill="${C.dim}">${esc(clip(o.description || '—', 32))}</text>
+  <text x="${tx}" y="${y + 100}" font-size="11" fill="${C.text}">▣ ${o.repositories.totalCount} public repos <tspan fill="${C.dim}">· since ${o.createdAt.slice(0, 4)}</tspan></text>
+</g>`;
+  }).join('\n');
+  const empty = s.orgs.length ? '' : `<text x="${x0}" y="${y0 + 60}" font-size="13" fill="${C.dim}">no public organizations found</text>`;
+  return frame(w, h, `NETWORK.NODES // ORGANIZATIONS · ${s.orgs.length} LINKED`, cards + empty, defs);
+}
+
+// A chubby grey tabby that patrols the bottom of the page.
+function catSvg() {
+  const w = 1200, h = 130, ground = 104;
+  const fur = '#b9b2b6', stripe = '#6d666a', ink = '#2a2528', pink = '#ff9ec7';
+  const cat = `
+  <g class="tail"><path d="M-38 -16C-52 -18 -58 -28 -50 -36" fill="none" stroke="${ink}" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-38 -16C-52 -18 -58 -28 -50 -36" fill="none" stroke="${fur}" stroke-width="7" stroke-linecap="round"/></g>
+  <g class="feet">
+    <ellipse class="fa" cx="-24" cy="0" rx="7" ry="4.5" fill="${fur}" stroke="${ink}" stroke-width="1.5"/>
+    <ellipse class="fb" cx="-10" cy="0" rx="7" ry="4.5" fill="${fur}" stroke="${ink}" stroke-width="1.5"/>
+    <ellipse class="fa" cx="14" cy="0" rx="7" ry="4.5" fill="${fur}" stroke="${ink}" stroke-width="1.5"/>
+    <ellipse class="fb" cx="28" cy="0" rx="7" ry="4.5" fill="${fur}" stroke="${ink}" stroke-width="1.5"/>
+  </g>
+  <g class="body">
+    <path d="M14 -46L19 -63L29 -48Z" fill="${fur}" stroke="${ink}" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M30 -46L39 -60L42 -42Z" fill="${fur}" stroke="${ink}" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M18.5 -52L20 -58L24 -51Z" fill="${pink}" opacity=".8"/>
+    <path d="M-42 -8C-46 -32 -30 -50 -2 -50C24 -50 42 -44 45 -24C48 -6 42 0 32 0H-32C-39 0 -41 -3 -42 -8Z" fill="${fur}" stroke="${ink}" stroke-width="1.8"/>
+    <path d="M20 -49.5V-44M26 -49.8V-43.5M32 -49V-44" stroke="${stripe}" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M-22 -47C-24 -42 -24 -38 -22 -35M-12 -49.5C-14 -44 -14 -40 -12 -37" fill="none" stroke="${stripe}" stroke-width="2.6" stroke-linecap="round"/>
+    <g class="eyes"><circle cx="21" cy="-28" r="2.4" fill="${ink}"/><circle cx="35" cy="-28" r="2.4" fill="${ink}"/></g>
+    <path d="M25 -22.5Q26.5 -20.5 28 -22.5Q29.5 -20.5 31 -22.5" fill="none" stroke="${ink}" stroke-width="1.3" stroke-linecap="round"/>
+    <ellipse cx="15" cy="-21" rx="3.4" ry="2" fill="${pink}" opacity=".7"/>
+    <ellipse cx="40" cy="-21" rx="3" ry="2" fill="${pink}" opacity=".7"/>
+    <path d="M42 -26H50M42 -22H49" stroke="${ink}" stroke-width="1" stroke-linecap="round" opacity=".6"/>
+  </g>`;
+  const body = `
+<style>
+  .walk{animation:walk 22s linear infinite}
+  @keyframes walk{0%{transform:translate(100px,${ground}px)}50%{transform:translate(${w - 100}px,${ground}px)}100%{transform:translate(100px,${ground}px)}}
+  .face{animation:face 22s linear infinite}
+  @keyframes face{0%,49.9%{transform:scaleX(1)}50%,99.9%{transform:scaleX(-1)}100%{transform:scaleX(1)}}
+  .body{animation:bob .45s ease-in-out infinite alternate}
+  @keyframes bob{to{transform:translateY(-2.5px)}}
+  .fa{animation:step .45s ease-in-out infinite alternate}
+  .fb{animation:step .45s ease-in-out infinite alternate-reverse}
+  @keyframes step{from{transform:translateY(0)}to{transform:translateY(-4px)}}
+  .tail{transform-origin:-38px -16px;animation:wag .9s ease-in-out infinite alternate}
+  @keyframes wag{from{transform:rotate(-8deg)}to{transform:rotate(14deg)}}
+  .eyes{animation:blinkeye 4s infinite}
+  @keyframes blinkeye{0%,94%,100%{transform:scaleY(1)}96%{transform:translateY(-28px) scaleY(.1) translateY(28px)}}
+  .heart{animation:float 3s ease-out infinite;opacity:0}
+  @keyframes float{0%{opacity:0;transform:translate(0,0)}20%{opacity:1}100%{opacity:0;transform:translate(0,-26px)}}
+</style>
+<text x="28" y="34" font-size="12" fill="${C.dim}" letter-spacing="2"><tspan fill="${C.cyan}">▍</tspan>MEOW.EXE // PATROLLING THE FOOTER</text>
+<line x1="24" y1="${ground + 5.5}" x2="${w - 24}" y2="${ground + 5.5}" stroke="${C.line}" stroke-width="1"/>
+<line x1="24" y1="${ground + 5.5}" x2="${w - 24}" y2="${ground + 5.5}" stroke="${C.cyan}" stroke-opacity=".35" stroke-dasharray="2 10"/>
+<g class="walk">
+  <ellipse cx="0" cy="5" rx="40" ry="4" fill="#000" opacity=".45"/>
+  <g class="face">${cat}
+    <text class="heart" x="34" y="-66" font-size="13" fill="${C.mag}">♥</text>
+  </g>
+</g>`;
+  return frame(w, h, '', body);
 }
 
 // ----------------------------------------------------------------- main ---
@@ -496,6 +595,7 @@ await Promise.all([
   writeFile(new URL('activity.svg', OUT), activitySvg(s)),
   writeFile(new URL('languages.svg', OUT), languagesSvg(s)),
   writeFile(new URL('contributions.svg', OUT), contribSvg(s)),
+  writeFile(new URL('organizations.svg', OUT), orgsSvg(s)),
+  writeFile(new URL('cat.svg', OUT), catSvg()),
 ]);
-await updateReadme(s);
-console.log(`ok: ${s.publicRepos} public repos, ${s.totalContrib} contributions, ${s.commits} commits sampled, peak hour ${s.hours.indexOf(Math.max(...s.hours))}`);
+console.log(`ok: ${s.publicRepos} public repos, ${s.totalContrib} contributions, ${s.commits} commits sampled, peak hour ${s.hours.indexOf(Math.max(...s.hours))}, ${s.orgs.length} orgs`);
