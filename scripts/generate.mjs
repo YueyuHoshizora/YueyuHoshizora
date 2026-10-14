@@ -498,38 +498,36 @@ function clip(str = '', max) {
 }
 
 function orgsSvg(s) {
-  const w = 1200, cols = 3, cw = 365, ch = 116, gx = 16, gy = 16, x0 = 28, y0 = 62;
-  const rows = Math.max(1, Math.ceil(s.orgs.length / cols));
-  const h = y0 + rows * (ch + gy) + 12;
+  const w = 1200, cw = 1144, ch = 92, gy = 12, x0 = 28, y0 = 62, av = 60;
+  const h = y0 + Math.max(1, s.orgs.length) * (ch + gy) + 16;
   const accents = [C.cyan, C.mag, C.violet, C.green, C.amber];
   const defs = s.orgs.map((o, i) => {
-    const x = x0 + (i % cols) * (cw + gx), y = y0 + Math.floor(i / cols) * (ch + gy);
-    return `<clipPath id="org${i}"><rect x="${x + 20}" y="${y + 24}" width="68" height="68" rx="14"/></clipPath>`;
+    const y = y0 + i * (ch + gy);
+    return `<clipPath id="org${i}"><rect x="${x0 + 22}" y="${y + 16}" width="${av}" height="${av}" rx="12"/></clipPath>`;
   }).join('');
-  const cards = s.orgs.map((o, i) => {
-    const x = x0 + (i % cols) * (cw + gx), y = y0 + Math.floor(i / cols) * (ch + gy);
-    const a = accents[i % accents.length];
-    const tx = x + 106;
+  const rows = s.orgs.map((o, i) => {
+    const x = x0, y = y0 + i * (ch + gy), a = accents[i % accents.length];
+    const tx = x + 22 + av + 22, rx = x + cw - 24;
     return `<g class="fade" style="animation-delay:${i * 0.1}s">
   <rect x="${x}" y="${y}" width="${cw}" height="${ch}" rx="12" fill="${C.panel}" stroke="${C.line}"/>
-  <path d="M${x + cw - 46} ${y}H${x + cw - 12}a12 12 0 0 1 12 12V${y + 34}" fill="none" stroke="${a}" stroke-width="2" opacity=".8"/>
+  <rect x="${x}" y="${y + 18}" width="3" height="${ch - 36}" fill="${a}" filter="url(#glow)"/>
   ${o.avatar
-    ? `<image href="${o.avatar}" x="${x + 20}" y="${y + 24}" width="68" height="68" clip-path="url(#org${i})" preserveAspectRatio="xMidYMid slice"/>`
-    : `<rect x="${x + 20}" y="${y + 24}" width="68" height="68" rx="14" fill="${C.bg1}"/>`}
-  <rect x="${x + 20}" y="${y + 24}" width="68" height="68" rx="14" fill="none" stroke="${a}" stroke-opacity=".7" filter="url(#glow)"/>
-  <text x="${tx}" y="${y + 40}" font-size="16" font-weight="700" fill="${C.white}">${esc(clip(o.name || o.login, 24))}</text>
-  <text x="${tx}" y="${y + 60}" font-size="12" fill="${a}">@${esc(o.login)}</text>
-  <text x="${tx}" y="${y + 80}" font-size="12" fill="${C.dim}">${esc(clip(o.description || '—', 32))}</text>
-  <text x="${tx}" y="${y + 100}" font-size="11" fill="${C.text}">▣ ${o.repositories.totalCount} public repos <tspan fill="${C.dim}">· since ${o.createdAt.slice(0, 4)}</tspan></text>
+    ? `<image href="${o.avatar}" x="${x + 22}" y="${y + 16}" width="${av}" height="${av}" clip-path="url(#org${i})" preserveAspectRatio="xMidYMid slice"/>`
+    : `<rect x="${x + 22}" y="${y + 16}" width="${av}" height="${av}" rx="12" fill="${C.bg1}"/>`}
+  <rect x="${x + 22}" y="${y + 16}" width="${av}" height="${av}" rx="12" fill="none" stroke="${a}" stroke-opacity=".7"/>
+  <text x="${tx}" y="${y + 40}" font-size="17" font-weight="700" fill="${C.white}">${esc(clip(o.name || o.login, 60))}<tspan font-size="12" font-weight="400" fill="${a}" dx="12">@${esc(o.login)}</tspan></text>
+  <text x="${tx}" y="${y + 64}" font-size="12" fill="${C.dim}">${esc(clip(o.description || '—', 80))}</text>
+  <text x="${rx}" y="${y + 42}" font-size="24" font-weight="700" fill="${C.white}" text-anchor="end">${o.repositories.totalCount}</text>
+  <text x="${rx}" y="${y + 64}" font-size="11" fill="${C.dim}" text-anchor="end" letter-spacing="1">PUBLIC REPOS · SINCE ${o.createdAt.slice(0, 4)}</text>
 </g>`;
   }).join('\n');
-  const empty = s.orgs.length ? '' : `<text x="${x0}" y="${y0 + 60}" font-size="13" fill="${C.dim}">no public organizations found</text>`;
-  return frame(w, h, `NETWORK.NODES // ORGANIZATIONS · ${s.orgs.length} LINKED`, cards + empty, defs);
+  const empty = s.orgs.length ? '' : `<text x="${x0}" y="${y0 + 50}" font-size="13" fill="${C.dim}">no public organizations found</text>`;
+  return frame(w, h, `NETWORK.NODES // ORGANIZATIONS · ${s.orgs.length} LINKED`, rows + empty, defs);
 }
 
 // A chubby grey tabby that patrols the bottom of the page.
 function catSvg() {
-  const w = 1200, h = 130, ground = 104;
+  const w = 1200, h = 325, ground = 280, scale = 2, margin = 150;
   const fur = '#b9b2b6', stripe = '#6d666a', ink = '#2a2528', pink = '#ff9ec7';
   const cat = `
   <g class="tail"><path d="M-38 -16C-52 -18 -58 -28 -50 -36" fill="none" stroke="${ink}" stroke-width="10" stroke-linecap="round"/>
@@ -556,7 +554,7 @@ function catSvg() {
   const body = `
 <style>
   .walk{animation:walk 22s linear infinite}
-  @keyframes walk{0%{transform:translate(100px,${ground}px)}50%{transform:translate(${w - 100}px,${ground}px)}100%{transform:translate(100px,${ground}px)}}
+  @keyframes walk{0%{transform:translate(${margin}px,${ground}px)}50%{transform:translate(${w - margin}px,${ground}px)}100%{transform:translate(${margin}px,${ground}px)}}
   .face{animation:face 22s linear infinite}
   @keyframes face{0%,49.9%{transform:scaleX(1)}50%,99.9%{transform:scaleX(-1)}100%{transform:scaleX(1)}}
   .body{animation:bob .45s ease-in-out infinite alternate}
@@ -572,13 +570,13 @@ function catSvg() {
   @keyframes float{0%{opacity:0;transform:translate(0,0)}20%{opacity:1}100%{opacity:0;transform:translate(0,-26px)}}
 </style>
 <text x="28" y="34" font-size="12" fill="${C.dim}" letter-spacing="2"><tspan fill="${C.cyan}">▍</tspan>MEOW.EXE // PATROLLING THE FOOTER</text>
-<line x1="24" y1="${ground + 5.5}" x2="${w - 24}" y2="${ground + 5.5}" stroke="${C.line}" stroke-width="1"/>
-<line x1="24" y1="${ground + 5.5}" x2="${w - 24}" y2="${ground + 5.5}" stroke="${C.cyan}" stroke-opacity=".35" stroke-dasharray="2 10"/>
+<line x1="24" y1="${ground + 5 * scale + 1}" x2="${w - 24}" y2="${ground + 5 * scale + 1}" stroke="${C.line}" stroke-width="1"/>
+<line x1="24" y1="${ground + 5 * scale + 1}" x2="${w - 24}" y2="${ground + 5 * scale + 1}" stroke="${C.cyan}" stroke-opacity=".35" stroke-dasharray="2 10"/>
 <g class="walk">
-  <ellipse cx="0" cy="5" rx="40" ry="4" fill="#000" opacity=".45"/>
-  <g class="face">${cat}
+  <ellipse cx="0" cy="${5 * scale}" rx="${40 * scale}" ry="${4 * scale}" fill="#000" opacity=".45"/>
+  <g class="face"><g transform="scale(${scale})">${cat}
     <text class="heart" x="34" y="-66" font-size="13" fill="${C.mag}">♥</text>
-  </g>
+  </g></g>
 </g>`;
   return frame(w, h, '', body);
 }
