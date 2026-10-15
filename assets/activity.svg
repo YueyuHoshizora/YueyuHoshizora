@@ -22,13 +22,13 @@
 <circle class="blink" cx="1166" cy="33" r="4" fill="#39ff88" filter="url(#glow)"/>
 <text x="1154" y="38" font-size="11" fill="#39ff88" text-anchor="end" letter-spacing="2">LIVE</text>
 
-<text x="40" y="78" font-size="12" fill="#c9d6f2">COMMITS BY HOUR <tspan fill="#5b6b8c">(Asia/Taipei · 2349 commits, last 365d)</tspan></text>
+<text x="40" y="78" font-size="12" fill="#c9d6f2">COMMITS BY HOUR <tspan fill="#5b6b8c">(Asia/Taipei · 2408 commits, last 365d)</tspan></text>
 <line x1="434.5" y1="102" x2="434.5" y2="84" stroke="#ff2bd6"/>
 <text x="434.5" y="78" font-size="11" fill="#ff2bd6" text-anchor="middle">PEAK 13:00</text>
 <line x1="34" y1="300.5" x2="748" y2="300.5" stroke="#1b2440"/>
-<rect x="40" y="224.6368715083799" width="22" height="75.36312849162012" rx="3" fill="url(#bar)" opacity="0.6078212290502794">
-    <animate attributeName="height" from="0" to="75.36312849162012" dur=".8s" begin="0s" fill="freeze"/>
-    <animate attributeName="y" from="300" to="224.6368715083799" dur=".8s" begin="0s" fill="freeze"/>
+<rect x="40" y="223.5754189944134" width="22" height="76.42458100558659" rx="3" fill="url(#bar)" opacity="0.6114525139664804">
+    <animate attributeName="height" from="0" to="76.42458100558659" dur=".8s" begin="0s" fill="freeze"/>
+    <animate attributeName="y" from="300" to="223.5754189944134" dur=".8s" begin="0s" fill="freeze"/>
   </rect><text x="51" y="320" font-size="11" fill="#5b6b8c" text-anchor="middle">00</text>
 <rect x="69.5" y="237.37430167597765" width="22" height="62.625698324022345" rx="3" fill="url(#bar)" opacity="0.5642458100558659">
     <animate attributeName="height" from="0" to="62.625698324022345" dur=".8s" begin="0.025s" fill="freeze"/>
@@ -82,45 +82,45 @@
     <animate attributeName="height" from="0" to="190" dur=".8s" begin="0.325s" fill="freeze"/>
     <animate attributeName="y" from="300" to="110" dur=".8s" begin="0.325s" fill="freeze"/>
   </rect>
-<rect x="453" y="148.2122905027933" width="22" height="151.7877094972067" rx="3" fill="url(#bar)" opacity="0.8692737430167597">
-    <animate attributeName="height" from="0" to="151.7877094972067" dur=".8s" begin="0.35000000000000003s" fill="freeze"/>
-    <animate attributeName="y" from="300" to="148.2122905027933" dur=".8s" begin="0.35000000000000003s" fill="freeze"/>
+<rect x="453" y="140.78212290502793" width="22" height="159.21787709497207" rx="3" fill="url(#bar)" opacity="0.8946927374301676">
+    <animate attributeName="height" from="0" to="159.21787709497207" dur=".8s" begin="0.35000000000000003s" fill="freeze"/>
+    <animate attributeName="y" from="300" to="140.78212290502793" dur=".8s" begin="0.35000000000000003s" fill="freeze"/>
   </rect>
-<rect x="482.5" y="160.94972067039106" width="22" height="139.05027932960894" rx="3" fill="url(#bar)" opacity="0.8256983240223463">
-    <animate attributeName="height" from="0" to="139.05027932960894" dur=".8s" begin="0.375s" fill="freeze"/>
-    <animate attributeName="y" from="300" to="160.94972067039106" dur=".8s" begin="0.375s" fill="freeze"/>
+<rect x="482.5" y="154.58100558659217" width="22" height="145.41899441340783" rx="3" fill="url(#bar)" opacity="0.8474860335195531">
+    <animate attributeName="height" from="0" to="145.41899441340783" dur=".8s" begin="0.375s" fill="freeze"/>
+    <animate attributeName="y" from="300" to="154.58100558659217" dur=".8s" begin="0.375s" fill="freeze"/>
   </rect><text x="493.5" y="320" font-size="11" fill="#5b6b8c" text-anchor="middle">15</text>
-<rect x="512" y="134.41340782122904" width="22" height="165.58659217877096" rx="3" fill="url(#bar)" opacity="0.9164804469273743">
-    <animate attributeName="height" from="0" to="165.58659217877096" dur=".8s" begin="0.4s" fill="freeze"/>
-    <animate attributeName="y" from="300" to="134.41340782122904" dur=".8s" begin="0.4s" fill="freeze"/>
+<rect x="512" y="133.35195530726256" width="22" height="166.64804469273744" rx="3" fill="url(#bar)" opacity="0.9201117318435754">
+    <animate attributeName="height" from="0" to="166.64804469273744" dur=".8s" begin="0.4s" fill="freeze"/>
+    <animate attributeName="y" from="300" to="133.35195530726256" dur=".8s" begin="0.4s" fill="freeze"/>
   </rect>
-<rect x="541.5" y="155.64245810055866" width="22" height="144.35754189944134" rx="3" fill="url(#bar)" opacity="0.8438547486033519">
-    <animate attributeName="height" from="0" to="144.35754189944134" dur=".8s" begin="0.42500000000000004s" fill="freeze"/>
-    <animate attributeName="y" from="300" to="155.64245810055866" dur=".8s" begin="0.42500000000000004s" fill="freeze"/>
+<rect x="541.5" y="142.90502793296088" width="22" height="157.09497206703912" rx="3" fill="url(#bar)" opacity="0.8874301675977654">
+    <animate attributeName="height" from="0" to="157.09497206703912" dur=".8s" begin="0.42500000000000004s" fill="freeze"/>
+    <animate attributeName="y" from="300" to="142.90502793296088" dur=".8s" begin="0.42500000000000004s" fill="freeze"/>
   </rect>
-<rect x="571" y="159.88826815642457" width="22" height="140.11173184357543" rx="3" fill="url(#bar)" opacity="0.8293296089385475">
-    <animate attributeName="height" from="0" to="140.11173184357543" dur=".8s" begin="0.45s" fill="freeze"/>
-    <animate attributeName="y" from="300" to="159.88826815642457" dur=".8s" begin="0.45s" fill="freeze"/>
+<rect x="571" y="147.15083798882682" width="22" height="152.84916201117318" rx="3" fill="url(#bar)" opacity="0.8729050279329609">
+    <animate attributeName="height" from="0" to="152.84916201117318" dur=".8s" begin="0.45s" fill="freeze"/>
+    <animate attributeName="y" from="300" to="147.15083798882682" dur=".8s" begin="0.45s" fill="freeze"/>
   </rect><text x="582" y="320" font-size="11" fill="#5b6b8c" text-anchor="middle">18</text>
-<rect x="600.5" y="154.58100558659217" width="22" height="145.41899441340783" rx="3" fill="url(#bar)" opacity="0.8474860335195531">
-    <animate attributeName="height" from="0" to="145.41899441340783" dur=".8s" begin="0.47500000000000003s" fill="freeze"/>
-    <animate attributeName="y" from="300" to="154.58100558659217" dur=".8s" begin="0.47500000000000003s" fill="freeze"/>
+<rect x="600.5" y="150.33519553072625" width="22" height="149.66480446927375" rx="3" fill="url(#bar)" opacity="0.8620111731843575">
+    <animate attributeName="height" from="0" to="149.66480446927375" dur=".8s" begin="0.47500000000000003s" fill="freeze"/>
+    <animate attributeName="y" from="300" to="150.33519553072625" dur=".8s" begin="0.47500000000000003s" fill="freeze"/>
   </rect>
-<rect x="630" y="184.30167597765364" width="22" height="115.69832402234637" rx="3" fill="url(#bar)" opacity="0.7458100558659218">
-    <animate attributeName="height" from="0" to="115.69832402234637" dur=".8s" begin="0.5s" fill="freeze"/>
-    <animate attributeName="y" from="300" to="184.30167597765364" dur=".8s" begin="0.5s" fill="freeze"/>
+<rect x="630" y="172.62569832402235" width="22" height="127.37430167597765" rx="3" fill="url(#bar)" opacity="0.785754189944134">
+    <animate attributeName="height" from="0" to="127.37430167597765" dur=".8s" begin="0.5s" fill="freeze"/>
+    <animate attributeName="y" from="300" to="172.62569832402235" dur=".8s" begin="0.5s" fill="freeze"/>
   </rect>
-<rect x="659.5" y="250.11173184357543" width="22" height="49.88826815642458" rx="3" fill="url(#bar)" opacity="0.5206703910614525">
-    <animate attributeName="height" from="0" to="49.88826815642458" dur=".8s" begin="0.525s" fill="freeze"/>
-    <animate attributeName="y" from="300" to="250.11173184357543" dur=".8s" begin="0.525s" fill="freeze"/>
+<rect x="659.5" y="249.05027932960894" width="22" height="50.94972067039106" rx="3" fill="url(#bar)" opacity="0.5243016759776536">
+    <animate attributeName="height" from="0" to="50.94972067039106" dur=".8s" begin="0.525s" fill="freeze"/>
+    <animate attributeName="y" from="300" to="249.05027932960894" dur=".8s" begin="0.525s" fill="freeze"/>
   </rect><text x="670.5" y="320" font-size="11" fill="#5b6b8c" text-anchor="middle">21</text>
-<rect x="689" y="241.62011173184356" width="22" height="58.37988826815643" rx="3" fill="url(#bar)" opacity="0.5497206703910614">
-    <animate attributeName="height" from="0" to="58.37988826815643" dur=".8s" begin="0.55s" fill="freeze"/>
-    <animate attributeName="y" from="300" to="241.62011173184356" dur=".8s" begin="0.55s" fill="freeze"/>
+<rect x="689" y="240.5586592178771" width="22" height="59.44134078212291" rx="3" fill="url(#bar)" opacity="0.5533519553072626">
+    <animate attributeName="height" from="0" to="59.44134078212291" dur=".8s" begin="0.55s" fill="freeze"/>
+    <animate attributeName="y" from="300" to="240.5586592178771" dur=".8s" begin="0.55s" fill="freeze"/>
   </rect>
-<rect x="718.5" y="233.12849162011173" width="22" height="66.87150837988827" rx="3" fill="url(#bar)" opacity="0.5787709497206703">
-    <animate attributeName="height" from="0" to="66.87150837988827" dur=".8s" begin="0.5750000000000001s" fill="freeze"/>
-    <animate attributeName="y" from="300" to="233.12849162011173" dur=".8s" begin="0.5750000000000001s" fill="freeze"/>
+<rect x="718.5" y="229.9441340782123" width="22" height="70.05586592178771" rx="3" fill="url(#bar)" opacity="0.5896648044692737">
+    <animate attributeName="height" from="0" to="70.05586592178771" dur=".8s" begin="0.5750000000000001s" fill="freeze"/>
+    <animate attributeName="y" from="300" to="229.9441340782123" dur=".8s" begin="0.5750000000000001s" fill="freeze"/>
   </rect>
 <line x1="790" y1="62" x2="790" y2="350" stroke="#1b2440" stroke-dasharray="3 5"/>
 <text x="830" y="78" font-size="12" fill="#c9d6f2">CONTRIBUTIONS BY WEEKDAY</text>
@@ -143,8 +143,8 @@
   <text x="1166" y="194" font-size="11" fill="#c9d6f2">554</text>
   <text x="830" y="224" font-size="12" fill="#5b6b8c">THU</text>
   <rect x="876" y="212" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="212" width="57.34939759036144" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="224" font-size="11" fill="#c9d6f2">289</text>
+  <rect x="876" y="212" width="57.7462792345854" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="224" font-size="11" fill="#c9d6f2">291</text>
   <text x="830" y="254" font-size="12" fill="#5b6b8c">FRI</text>
   <rect x="876" y="242" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
   <rect x="876" y="242" width="70.049610205528" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
