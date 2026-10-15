@@ -22,7 +22,7 @@
 <circle class="blink" cx="1166" cy="33" r="4" fill="#39ff88" filter="url(#glow)"/>
 <text x="1154" y="38" font-size="11" fill="#39ff88" text-anchor="end" letter-spacing="2">LIVE</text>
 
-<text x="40" y="78" font-size="12" fill="#c9d6f2">COMMITS BY HOUR <tspan fill="#5b6b8c">(Asia/Taipei · 2408 commits, last 365d)</tspan></text>
+<text x="40" y="78" font-size="12" fill="#c9d6f2">COMMITS BY HOUR <tspan fill="#5b6b8c">(Asia/Taipei · 2411 commits, last 365d)</tspan></text>
 <line x1="434.5" y1="102" x2="434.5" y2="84" stroke="#ff2bd6"/>
 <text x="434.5" y="78" font-size="11" fill="#ff2bd6" text-anchor="middle">PEAK 13:00</text>
 <line x1="34" y1="300.5" x2="748" y2="300.5" stroke="#1b2440"/>
@@ -62,13 +62,13 @@
     <animate attributeName="height" from="0" to="101.89944134078212" dur=".8s" begin="0.2s" fill="freeze"/>
     <animate attributeName="y" from="300" to="198.10055865921788" dur=".8s" begin="0.2s" fill="freeze"/>
   </rect>
-<rect x="305.5" y="201.2849162011173" width="22" height="98.71508379888267" rx="3" fill="url(#bar)" opacity="0.6877094972067039">
-    <animate attributeName="height" from="0" to="98.71508379888267" dur=".8s" begin="0.225s" fill="freeze"/>
-    <animate attributeName="y" from="300" to="201.2849162011173" dur=".8s" begin="0.225s" fill="freeze"/>
+<rect x="305.5" y="200.22346368715085" width="22" height="99.77653631284916" rx="3" fill="url(#bar)" opacity="0.691340782122905">
+    <animate attributeName="height" from="0" to="99.77653631284916" dur=".8s" begin="0.225s" fill="freeze"/>
+    <animate attributeName="y" from="300" to="200.22346368715085" dur=".8s" begin="0.225s" fill="freeze"/>
   </rect><text x="316.5" y="320" font-size="11" fill="#5b6b8c" text-anchor="middle">09</text>
-<rect x="335" y="219.3296089385475" width="22" height="80.67039106145252" rx="3" fill="url(#bar)" opacity="0.6259776536312849">
-    <animate attributeName="height" from="0" to="80.67039106145252" dur=".8s" begin="0.25s" fill="freeze"/>
-    <animate attributeName="y" from="300" to="219.3296089385475" dur=".8s" begin="0.25s" fill="freeze"/>
+<rect x="335" y="217.20670391061452" width="22" height="82.79329608938548" rx="3" fill="url(#bar)" opacity="0.6332402234636871">
+    <animate attributeName="height" from="0" to="82.79329608938548" dur=".8s" begin="0.25s" fill="freeze"/>
+    <animate attributeName="y" from="300" to="217.20670391061452" dur=".8s" begin="0.25s" fill="freeze"/>
   </rect>
 <rect x="364.5" y="200.22346368715085" width="22" height="99.77653631284916" rx="3" fill="url(#bar)" opacity="0.691340782122905">
     <animate attributeName="height" from="0" to="99.77653631284916" dur=".8s" begin="0.275s" fill="freeze"/>
@@ -143,8 +143,8 @@
   <text x="1166" y="194" font-size="11" fill="#c9d6f2">554</text>
   <text x="830" y="224" font-size="12" fill="#5b6b8c">THU</text>
   <rect x="876" y="212" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="212" width="63.104181431608794" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="224" font-size="11" fill="#c9d6f2">318</text>
+  <rect x="876" y="212" width="71.43869596031183" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="224" font-size="11" fill="#c9d6f2">360</text>
   <text x="830" y="254" font-size="12" fill="#5b6b8c">FRI</text>
   <rect x="876" y="242" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
   <rect x="876" y="242" width="70.049610205528" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
