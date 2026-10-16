@@ -135,20 +135,20 @@
   <text x="1166" y="134" font-size="11" fill="#c9d6f2">667</text>
   <text x="830" y="164" font-size="12" fill="#5b6b8c">TUE</text>
   <rect x="876" y="152" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="152" width="154.38695960311836" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="164" font-size="11" fill="#c9d6f2">778</text>
+  <rect x="876" y="152" width="158.75265768958184" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="164" font-size="11" fill="#c9d6f2">800</text>
   <text x="830" y="194" font-size="12" fill="#5b6b8c">WED</text>
   <rect x="876" y="182" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="182" width="109.93621545003543" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="194" font-size="11" fill="#c9d6f2">554</text>
+  <rect x="876" y="182" width="120.8504606661942" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="194" font-size="11" fill="#c9d6f2">609</text>
   <text x="830" y="224" font-size="12" fill="#5b6b8c">THU</text>
   <rect x="876" y="212" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="212" width="93.86250885896527" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="224" font-size="11" fill="#c9d6f2">473</text>
+  <rect x="876" y="212" width="94.65627214741319" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="224" font-size="11" fill="#c9d6f2">477</text>
   <text x="830" y="254" font-size="12" fill="#5b6b8c">FRI</text>
   <rect x="876" y="242" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="242" width="85.52799433026223" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="254" font-size="11" fill="#c9d6f2">431</text>
+  <rect x="876" y="242" width="88.70304748405387" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="254" font-size="11" fill="#c9d6f2">447</text>
   <text x="830" y="284" font-size="12" fill="#eef4ff">SAT</text>
   <rect x="876" y="272" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
   <rect x="876" y="272" width="280" height="14" rx="3" fill="#ff2bd6" opacity="1"/>
