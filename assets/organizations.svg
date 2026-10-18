@@ -38,7 +38,7 @@
   <rect x="50" y="182" width="60" height="60" rx="12" fill="none" stroke="#ff2bd6" stroke-opacity=".7"/>
   <text x="132" y="206" font-size="17" font-weight="700" fill="#eef4ff">JS-PACKAGE.XYZ<tspan font-size="12" font-weight="400" fill="#ff2bd6" dx="12">@JS-PACKAGE</tspan></text>
   <text x="132" y="230" font-size="12" fill="#5b6b8c">The JS Package Storage</text>
-  <text x="1148" y="208" font-size="24" font-weight="700" fill="#eef4ff" text-anchor="end">11</text>
+  <text x="1148" y="208" font-size="24" font-weight="700" fill="#eef4ff" text-anchor="end">12</text>
   <text x="1148" y="230" font-size="11" fill="#5b6b8c" text-anchor="end" letter-spacing="1">PUBLIC REPOS · SINCE 2026</text>
 </g>
 <g class="fade" style="animation-delay:0.2s">
