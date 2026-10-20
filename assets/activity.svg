@@ -135,8 +135,8 @@
   <text x="1166" y="134" font-size="11" fill="#c9d6f2">800</text>
   <text x="830" y="164" font-size="12" fill="#5b6b8c">TUE</text>
   <rect x="876" y="152" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="152" width="152.90102389078498" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="164" font-size="11" fill="#c9d6f2">800</text>
+  <rect x="876" y="152" width="155.38566552901025" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="164" font-size="11" fill="#c9d6f2">813</text>
   <text x="830" y="194" font-size="12" fill="#5b6b8c">WED</text>
   <rect x="876" y="182" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
   <rect x="876" y="182" width="116.39590443686006" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
