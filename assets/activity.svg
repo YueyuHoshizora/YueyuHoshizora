@@ -22,7 +22,7 @@
 <circle class="blink" cx="1166" cy="33" r="4" fill="#39ff88" filter="url(#glow)"/>
 <text x="1154" y="38" font-size="11" fill="#39ff88" text-anchor="end" letter-spacing="2">LIVE</text>
 
-<text x="40" y="78" font-size="12" fill="#c9d6f2">COMMITS BY HOUR <tspan fill="#5b6b8c">(Asia/Taipei · 1745 commits, last 365d)</tspan></text>
+<text x="40" y="78" font-size="12" fill="#c9d6f2">COMMITS BY HOUR <tspan fill="#5b6b8c">(Asia/Taipei · 1744 commits, last 365d)</tspan></text>
 <line x1="464" y1="102" x2="464" y2="84" stroke="#ff2bd6"/>
 <text x="464" y="78" font-size="11" fill="#ff2bd6" text-anchor="middle">PEAK 14:00</text>
 <line x1="34" y1="300.5" x2="748" y2="300.5" stroke="#1b2440"/>
@@ -110,9 +110,9 @@
     <animate attributeName="height" from="0" to="148.22695035460993" dur=".8s" begin="0.5s" fill="freeze"/>
     <animate attributeName="y" from="300" to="151.77304964539007" dur=".8s" begin="0.5s" fill="freeze"/>
   </rect>
-<rect x="659.5" y="262.26950354609926" width="22" height="37.73049645390071" rx="3" fill="url(#bar)" opacity="0.47907801418439716">
-    <animate attributeName="height" from="0" to="37.73049645390071" dur=".8s" begin="0.525s" fill="freeze"/>
-    <animate attributeName="y" from="300" to="262.26950354609926" dur=".8s" begin="0.525s" fill="freeze"/>
+<rect x="659.5" y="263.6170212765957" width="22" height="36.38297872340426" rx="3" fill="url(#bar)" opacity="0.47446808510638294">
+    <animate attributeName="height" from="0" to="36.38297872340426" dur=".8s" begin="0.525s" fill="freeze"/>
+    <animate attributeName="y" from="300" to="263.6170212765957" dur=".8s" begin="0.525s" fill="freeze"/>
   </rect><text x="670.5" y="320" font-size="11" fill="#5b6b8c" text-anchor="middle">21</text>
 <rect x="689" y="255.53191489361703" width="22" height="44.46808510638298" rx="3" fill="url(#bar)" opacity="0.502127659574468">
     <animate attributeName="height" from="0" to="44.46808510638298" dur=".8s" begin="0.55s" fill="freeze"/>
