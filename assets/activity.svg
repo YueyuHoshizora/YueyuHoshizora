@@ -147,8 +147,8 @@
   <text x="1166" y="224" font-size="11" fill="#c9d6f2">744</text>
   <text x="830" y="254" font-size="12" fill="#5b6b8c">FRI</text>
   <rect x="876" y="242" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="242" width="117.66756032171583" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="254" font-size="11" fill="#c9d6f2">627</text>
+  <rect x="876" y="242" width="120.48257372654156" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="254" font-size="11" fill="#c9d6f2">642</text>
   <text x="830" y="284" font-size="12" fill="#eef4ff">SAT</text>
   <rect x="876" y="272" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
   <rect x="876" y="272" width="280" height="14" rx="3" fill="#ff2bd6" opacity="1"/>
