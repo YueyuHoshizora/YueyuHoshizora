@@ -46,7 +46,7 @@
     <text x="60" y="180" font-size="15" fill="#c9d6f2"><tspan fill="#39ff88">❯</tspan> <tspan fill="#00e5ff">uptime</tspan><tspan fill="#5b6b8c">  →  </tspan>on GitHub since 2021-10-11 · 1,845 days</text>
   </g>
   <g class="fade" style="animation-delay:1.1s">
-    <text x="60" y="210" font-size="15" fill="#c9d6f2"><tspan fill="#39ff88">❯</tspan> <tspan fill="#00e5ff">ls ~/public | wc -l</tspan><tspan fill="#5b6b8c">  →  </tspan>25 public repositories · ★ 8 stars</text>
+    <text x="60" y="210" font-size="15" fill="#c9d6f2"><tspan fill="#39ff88">❯</tspan> <tspan fill="#00e5ff">ls ~/public | wc -l</tspan><tspan fill="#5b6b8c">  →  </tspan>26 public repositories · ★ 8 stars</text>
   </g>
   <g class="fade" style="animation-delay:1.4499999999999997s">
     <text x="60" y="240" font-size="15" fill="#c9d6f2"><tspan fill="#39ff88">❯</tspan> <tspan fill="#00e5ff">locate</tspan><tspan fill="#5b6b8c">  →  </tspan>Taiwan · Asia/Taipei</text>
