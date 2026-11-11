@@ -22,7 +22,7 @@
 <circle class="blink" cx="1166" cy="33" r="4" fill="#39ff88" filter="url(#glow)"/>
 <text x="1154" y="38" font-size="11" fill="#39ff88" text-anchor="end" letter-spacing="2">LIVE</text>
 
-<text x="40" y="78" font-size="12" fill="#c9d6f2">COMMITS BY HOUR <tspan fill="#5b6b8c">(Asia/Taipei · 2519 commits, last 365d)</tspan></text>
+<text x="40" y="78" font-size="12" fill="#c9d6f2">COMMITS BY HOUR <tspan fill="#5b6b8c">(Asia/Taipei · 2520 commits, last 365d)</tspan></text>
 <line x1="434.5" y1="102" x2="434.5" y2="84" stroke="#ff2bd6"/>
 <text x="434.5" y="78" font-size="11" fill="#ff2bd6" text-anchor="middle">PEAK 13:00</text>
 <line x1="34" y1="300.5" x2="748" y2="300.5" stroke="#1b2440"/>
@@ -114,9 +114,9 @@
     <animate attributeName="height" from="0" to="53.53591160220994" dur=".8s" begin="0.525s" fill="freeze"/>
     <animate attributeName="y" from="300" to="246.46408839779005" dur=".8s" begin="0.525s" fill="freeze"/>
   </rect><text x="670.5" y="320" font-size="11" fill="#5b6b8c" text-anchor="middle">21</text>
-<rect x="689" y="241.21546961325967" width="22" height="58.78453038674033" rx="3" fill="url(#bar)" opacity="0.5511049723756906">
-    <animate attributeName="height" from="0" to="58.78453038674033" dur=".8s" begin="0.55s" fill="freeze"/>
-    <animate attributeName="y" from="300" to="241.21546961325967" dur=".8s" begin="0.55s" fill="freeze"/>
+<rect x="689" y="240.1657458563536" width="22" height="59.834254143646405" rx="3" fill="url(#bar)" opacity="0.554696132596685">
+    <animate attributeName="height" from="0" to="59.834254143646405" dur=".8s" begin="0.55s" fill="freeze"/>
+    <animate attributeName="y" from="300" to="240.1657458563536" dur=".8s" begin="0.55s" fill="freeze"/>
   </rect>
 <rect x="718.5" y="227.56906077348066" width="22" height="72.43093922651934" rx="3" fill="url(#bar)" opacity="0.5977900552486188">
     <animate attributeName="height" from="0" to="72.43093922651934" dur=".8s" begin="0.5750000000000001s" fill="freeze"/>
@@ -139,8 +139,8 @@
   <text x="1166" y="164" font-size="11" fill="#c9d6f2">1090</text>
   <text x="830" y="194" font-size="12" fill="#5b6b8c">WED</text>
   <rect x="876" y="182" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="182" width="170.9159347553325" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="194" font-size="11" fill="#c9d6f2">973</text>
+  <rect x="876" y="182" width="171.09159347553324" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="194" font-size="11" fill="#c9d6f2">974</text>
   <text x="830" y="224" font-size="12" fill="#5b6b8c">THU</text>
   <rect x="876" y="212" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
   <rect x="876" y="212" width="187.95483061480553" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
