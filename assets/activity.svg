@@ -127,12 +127,12 @@
 
   <text x="830" y="104" font-size="12" fill="#5b6b8c">SUN</text>
   <rect x="876" y="92" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="92" width="102.4090338770389" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="104" font-size="11" fill="#c9d6f2">583</text>
+  <rect x="876" y="92" width="102.05771643663739" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="104" font-size="11" fill="#c9d6f2">581</text>
   <text x="830" y="134" font-size="12" fill="#5b6b8c">MON</text>
   <rect x="876" y="122" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
-  <rect x="876" y="122" width="217.99247176913426" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
-  <text x="1166" y="134" font-size="11" fill="#c9d6f2">1241</text>
+  <rect x="876" y="122" width="217.64115432873274" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
+  <text x="1166" y="134" font-size="11" fill="#c9d6f2">1239</text>
   <text x="830" y="164" font-size="12" fill="#5b6b8c">TUE</text>
   <rect x="876" y="152" width="280" height="14" rx="3" fill="#0d1326" stroke="#1b2440"/>
   <rect x="876" y="152" width="191.46800501882058" height="14" rx="3" fill="url(#neon)" opacity="0.75"/>
